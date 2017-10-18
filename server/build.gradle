@@ -1,0 +1,16 @@
+group 'com.bin.cxf'
+version '1.0.0'
+
+apply plugin: 'org.springframework.boot'
+
+dependencies {
+    compile (
+        project("::entity"),
+        extDependencies.spring_boot_web,
+        extDependencies.spring_boot_actuator,
+        extDependencies.spring_boot_devtools,
+        extDependencies.cxf_rt_frontend_jaxws,
+        extDependencies.cxf_rt_transports_http,
+        extDependencies.cxf_rt_transports_http_jetty,
+    )
+}

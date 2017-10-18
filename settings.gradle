@@ -1,0 +1,4 @@
+rootProject.name = 'cxf'
+include 'client'
+include 'entity'
+include 'server'

@@ -1,0 +1,53 @@
+ext {
+    versions = [
+            //compile
+            commons_lang3                   = '3.6',
+            commons_collections             = '3.2.2',
+            guava                           = '22.0',
+            joda_time                       = '2.4',
+            spring_boot	                    = '1.5.6.RELEASE',
+            fastjson                        = '1.2.38',
+            commons_text                    = '1.1',
+            zookeeper                       = '3.4.6',
+            zkclient                        = '0.1',
+            logback                         = '1.2.3',
+            cxf                             = '3.1.5',
+
+            //test
+
+            //provided
+            lombok                          = '1.16.18',
+    ]
+
+    commonDependencies = [
+            //compile
+            commons_lang3                   : "org.apache.commons:commons-lang3:${commons_lang3}",
+            commons_collections             : "commons-collections:commons-collections:${commons_collections}",
+            guava                           : "com.google.guava:guava:${guava}",
+            joda_time                       : "joda-time:joda-time:${joda_time}",
+            fastjson                        : "com.alibaba:fastjson:${fastjson}",
+            commons_text                    : "org.apache.commons:commons-text:${commons_text}",
+            logback_classic                 : "ch.qos.logback:logback-classic:${logback}",
+            logback_access                  : "ch.qos.logback:logback-access:${logback}",
+
+            //test
+            spring_boot_starter_test        :	"org.springframework.boot:spring-boot-starter-test:${spring_boot}",
+
+            //provided
+            lombok                          : "org.projectlombok:lombok:${lombok}",
+    ]
+
+    extDependencies = [
+            //compile
+            spring_boot_web                 : "org.springframework.boot:spring-boot-starter-web:${spring_boot}",
+            //spring boot健康监控
+            spring_boot_actuator            : "org.springframework.boot:spring-boot-starter-actuator:${spring_boot}",
+            //spring boot热部署
+            spring_boot_devtools            : "org.springframework.boot:spring-boot-devtools:${spring_boot}",
+
+            // cxf
+            cxf_rt_frontend_jaxws           : "org.apache.cxf:cxf-rt-frontend-jaxws:${cxf}",
+            cxf_rt_transports_http          : "org.apache.cxf:cxf-rt-transports-http:${cxf}",
+            cxf_rt_transports_http_jetty    : "org.apache.cxf:cxf-rt-transports-http-jetty:${cxf}",
+    ]
+}

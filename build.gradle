@@ -1,0 +1,70 @@
+group 'com.bin.cxf'
+version '1.0-SNAPSHOT'
+
+apply from: 'dependency.gradle'
+
+buildscript {
+    ext {
+        springBootVersion = "1.5.6.RELEASE"
+    }
+
+    repositories {
+        mavenLocal()
+        maven {
+            url aliyunMvnRepository
+        }
+        mavenCentral()//依赖Maven仓库
+    }
+
+    dependencies {
+        classpath("org.springframework.boot:spring-boot-gradle-plugin:${springBootVersion}")
+    }
+}
+
+allprojects {
+    apply plugin: 'idea'
+    apply plugin: 'java'
+
+    sourceCompatibility = 1.8
+    targetCompatibility = 1.8
+
+    repositories {
+        mavenLocal()
+        maven {
+            url aliyunMvnRepository
+        }
+        mavenCentral()//依赖Maven仓库
+    }
+
+    //指定编码为UTF-8
+    [compileJava, compileTestJava, javadoc]*.options*.encoding = 'UTF-8'
+}
+
+subprojects {
+
+    dependencies {
+        //编译时期
+        compile (
+            commonDependencies.commons_lang3,
+            commonDependencies.commons_collections,
+            commonDependencies.guava,
+            commonDependencies.joda_time,
+            commonDependencies.fastjson,
+            commonDependencies.commons_text,
+            commonDependencies.logback_classic,
+            commonDependencies.logback_access,
+        )
+
+        //相当于provided
+        compileOnly (
+            commonDependencies.lombok,
+        )
+
+        //测试
+        testCompile (
+            commonDependencies.spring_boot_starter_test,
+            commonDependencies.lombok,
+        )
+    }
+}
+

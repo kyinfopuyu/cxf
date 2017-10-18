@@ -1,0 +1,17 @@
+springboot集成h2： https://segmentfault.com/a/1190000007002140
+
+sprinboot打war包：http://blog.csdn.net/kingboyworld/article/details/75244769
+springboot项目一般不打成war包，打成jar包可以方便的使用外部配置，并且启动速度更快，也方便部署到docker等容器中。
+如果想打war包需要以下步骤：
+1、apply plugin: 'war'
+2、继承SpringBootServletInitializer类，覆盖configure方法。参考mybatis-base项目中ServletInitializer
+
+springboot开启热部署：http://blog.csdn.net/KingBoyWorld/article/details/74598857
+
+
+springboot自定义servl、filter、listener等：http://blog.csdn.net/catoop/article/details/50501686
+
+
+springboot热部署：http://www.cnblogs.com/lspz/p/6832358.html
+
+springboot健康监控：http://www.jianshu.com/p/734519d3c383
